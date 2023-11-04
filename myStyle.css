@@ -1,0 +1,1164 @@
+@font-face {
+    font-family: 'ChosunBg';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunBg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ChosunKg';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunKg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 우측 스크롤바 없애는 코드  */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+html{
+    font-size: 10px;
+}
+
+#bgBox{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url(img/paper.png);
+    background-size:cover;
+    background-repeat:repeat-y;
+
+    
+}
+
+body{
+    overflow-x: hidden;
+}
+
+/* #mask{
+    clip: rect(10vh);
+    background-color: aqua;
+    position: absolute;
+} */
+
+
+.scrolldown{
+    position: absolute;
+    top: 80vh;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 3.4rem;
+    height: 5.5rem;
+
+    display: flex;
+}
+
+#scrollP{
+    font-size: 1.2rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 2.5rem;
+    text-align: right;
+    position:fixed;
+}
+
+.mousey{
+    width: 0.3rem;
+    padding: 0.7rem 1.2rem;
+    height: 3.5rem;
+    border-radius: 2.5rem;
+    border: 0.2rem solid #4d4e4c;
+    box-sizing: content-box;
+}
+
+.scroller{
+    width: 0.3rem;
+    height: 0.8rem;
+    border-radius: 25%;
+    background-color: #4d4e4c;
+    animation-name: scroll;
+    animation-duration: 2.2s;
+    animation-timing-function: cubic-bezier(.15, .41, .69, .94);
+    animation-iteration-count: infinite;
+}
+
+@keyframes scroll {
+
+    0%{
+        opacity: 0;
+    }
+
+    10%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(1.5rem);
+        opacity: 0;
+
+    }
+
+    @keyframes downup{
+        0%{
+            opacity: 0;
+            transform: translateY(0, 10rem);
+        }
+
+        100%{
+            opacity: 1;
+            transform: translateY(0, 0);
+        }
+    }
+
+    @keyframes bounce{
+        from,
+        to{
+            margin-bottom: 0;
+            animation-timing-function: ease-out;
+        }
+
+        50%{
+            margin-bottom: 0.8rem;
+            animation-timing-function: ease-in;
+        }
+    }
+}
+
+.mask{
+    width: 70vw;
+    margin: 0 auto;
+    position: sticky;
+    top: 200px;
+
+    /* clip-path: inset(13% 17% 0 17%);*/
+
+    /* background-color: red;  */
+    
+    
+    /*
+    mask-image: url(img/maskImg.png);
+    -webkit-mask-image: url(img/maskImg.png);
+    mask-size:100%;
+    -webkit-mask-size: 100%;
+    mask-position:top;
+    -webkit-mask-position:10vh 10vh;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    */
+}
+
+.container{
+    
+    width: 100%;
+    height: 100vh;
+    
+    overflow: hidden;
+}
+
+
+
+/* .container{
+    background-color: rgb(186, 75, 75);
+    mask-image: url(img/maskImg.png);
+    -webkit-mask-image: url(img/maskImg.png);
+    mask-size: 190rem;
+    -webkit-mask-size: 170rem;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+
+    mask-origin: margin-box;
+
+    mask-position: relative;
+    touch-action: none;
+    justify-content: center;
+} */
+
+
+/* .row img{
+    background-color: red;
+    mask-image: url(img/maskImg.png);
+    -webkit-mask-image: url(img/maskImg.png);
+    mask-size: 122rem;
+    -webkit-mask-size: 122rem;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+
+    mask-position: top;
+    justify-content: center;
+} */
+
+
+
+
+
+
+
+#contents0{
+    /* display: flex; */
+    height: 200vh;
+    /* align-items: center; */
+    display: flex;
+    flex-direction: start;
+    padding: 17vh 0 0 0;
+    justify-content:start;
+    position: sticky;
+    top: 0px;
+}
+
+#contentsA{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky; /* 위쪽에서 붙게끔 하기 위해서 스티키를 주었다 */
+    top: 0px;
+}
+
+
+#contentsB{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+}
+
+
+#contentsC{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+}
+
+#contentsD{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+}
+
+#contentsE{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+}
+
+#contentsF{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+}
+
+#contentsG{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+}
+
+#contentsH{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+}
+
+#contentsI{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+}
+
+#contentsJ{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+}
+
+#contentsK{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+}
+
+/* #contentsC{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+} */
+
+
+h1{
+    font-size: 4.5rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 6rem;
+}
+
+
+#introImg{
+width: 55vw;
+height: 55vh;
+
+background-position: 50%;
+
+background-image: url(img/intro.png);
+background-size: contain;
+background-repeat: no-repeat;
+
+margin-bottom: 3rem;
+}
+
+#titleText p{
+    font-size: 4.4rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 6rem;
+
+    text-align: center;
+
+    /* margin-left: 32%; */
+}
+
+#introText1{
+    font-size: 2.5rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 4rem;
+
+    text-align: center;
+    /* margin-right: 9rem; */
+} 
+
+
+#introText2 p{
+    font-size: 2.5rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 4rem;
+    
+    text-align: left;
+    margin-top: 20rem;
+    margin-left: -35rem;
+} 
+
+#amount p{
+    font-size: 2.5rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 4rem;
+    /* margin-right: 20rem; */
+    text-align: center;
+}
+
+
+
+#essence{
+    text-align: left;
+    font-size: 2.5rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 4rem;
+    margin-bottom: 5rem;
+    margin-left: 45rem;
+}
+
+#softpowerPanda{
+    background-image: url(img/softpowerPanda.gif);
+    width: 24vw;
+    height: 24vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    
+    left: 60%;
+    bottom: 10%;
+    z-index: -1;
+}
+
+
+
+
+#imageSo{
+    text-align: center;
+}
+
+#imageSo{
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.8rem;
+    line-height: 3rem;
+}
+
+
+#deathT{
+    font-size: 1.8rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 3.4rem;
+    display: inline-block;
+    position: absolute;
+}
+
+#death1{
+    margin-left: 8rem;
+}
+
+#death1 p{
+    font-size: 2rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 3.5rem;
+    margin-bottom: 8rem;
+    margin-right: 9rem;
+}
+
+#death2{
+    margin-top: 6rem;
+}
+
+#death2 p{
+    font-size: 2rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 3.5rem;
+    margin-bottom: 8rem;
+}
+
+#retruntonation{
+    width: 58vw;
+    height: 19vh;
+    background-image: url(img/retruntonation.png);
+    background-size: contain;
+    position: inherit;
+    background-repeat: no-repeat;
+
+    margin-left: 24%;
+    margin-bottom: 2rem;
+}
+
+#returnT{
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 4rem;
+}
+
+#retrun1{
+    text-align: left;
+    margin-left: 18rem;
+    margin-bottom: 8rem;
+}
+
+#returnSo{
+    font-size: 1.8rem;
+    line-height: 3rem;
+}
+
+
+.eachPanda{
+    width: 21.5rem;
+    height: 21.5rem;
+    /* background-color: aquamarine; */
+    display: inline-block;
+}
+
+
+#japan{
+    background-image: url(img/japan.png);
+}
+#japan:hover{
+    background-image: url(img/japan2.png);
+}
+
+
+#france{
+    background-image: url(img/france.png);
+}
+#france:hover{
+    background-image: url(img/france2.png);
+}
+
+
+#usa{
+    background-image: url(img/usa.png);
+}
+#usa:hover{
+    background-image: url(img/usa2.png);
+}
+
+
+#england{
+    background-image: url(img/england.png);
+}
+#england:hover{
+    background-image: url(img/england2.png);
+}
+
+
+#korea{
+    background-image: url(img/korea.png);
+}
+#korea:hover{
+    background-image: url(img/korea2.png);
+}
+
+
+#environ3{
+    font-size: 4.5rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 6rem;
+
+    text-align: center;
+}
+
+
+#environBody{
+    font-size: 1.8rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 3.3rem;
+
+    text-align: center;
+
+    margin-top: 7rem;
+}
+
+#block{
+    display: block;
+}
+
+/* #eviron1{
+    font-size: 2.5rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 4rem;
+    margin-left: 30rem;
+    margin-bottom: 4rem;
+} */
+
+#environ1_2{
+    font-size: 2rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 3.5rem;
+    margin-left: -3rem;
+    margin-bottom: 4rem;
+}
+
+#eviron2{
+    font-size: 2.5rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 4rem;
+    margin-left: -3rem;
+
+    z-index: 1;
+}
+
+#notConsideration{
+    width: 55vw;
+    height: 11vh;
+    background-image: url(img/notConsideration.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    bottom: 13rem;
+    left: -5.5rem;
+}
+
+#fence1{
+    width: 30vw;
+    height: 30vh;
+    background-image: url(img/fence1.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    position:relative;
+
+    margin-bottom: 11rem;
+
+
+    /* bottom: -9rem;
+    right: -38rem; */
+
+
+    /* right: %; */
+
+    /* padding: 0 20rem 0 0; */
+
+    transform: rotate(-7deg);
+    transition-duration: 0.5s;
+}
+
+#fence1:hover{
+    transform: rotate(7deg);
+}
+
+#preserve{
+    width: 29vw;
+    height: 29vh;
+    background-image: url(img/stop.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    position:absolute; 
+    
+    right: -40rem;
+    top: -8rem;
+
+
+    opacity: 88%;
+
+    transform: rotate(14deg);
+    transition-duration: 0.5s;
+}
+
+#preserve:hover{
+    transform: rotate(-14deg);
+}
+
+#endager{
+    width: 16vw;
+    height: 16vh;
+    background-image: url(img/endager.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    position:absolute; 
+
+    opacity: 88%;
+    z-index: -1;
+
+    right: 38rem;
+    top: -12rem;
+
+    transform: rotate(30deg);
+    transition-duration: 0.5s;
+}
+
+#endager:hover{
+    transform: rotate(-30deg);
+}
+
+/* #iucn{
+    width: 17vw;
+    height: 17vh;
+    background-image: url(img/iucn.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    position:absolute; 
+
+    right: 35rem;
+    top: -4rem;
+    z-index: -4;
+
+    opacity: 50%;
+
+    transform: rotate(-16deg);
+    transition-duration: 0.5s;
+} */
+
+#iucn:hover{
+transform: rotate(16deg);
+transition-duration: 0.5s;
+}
+
+#fail1{
+    text-align: center;
+    font-size: 4.5rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 6rem;
+}
+
+#fail2{
+    margin-bottom: 5rem;
+}
+
+
+
+/* ↓표지 이미지 위치 조정하는 코드↓ */
+.imgBox{
+    width: 100%; /*이 윗스랑 하이트로 이미지의 위치 조절하는 것임 크기가 커질수록 내가 원하는 contentsB의 가운데로 오게 됨*/
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    /* margin-right: 70rem; */
+    /*overflow:inherit; /*이미지가 밖으로 튀어나가지말라고 쓰는 코드임*/
+    /*margin-right: 5rem; /*우측의 텍스트와 너무 붙게 되니까 주는 간격준 코드임*/
+}
+
+
+
+#definitionImg{
+    width: 43vw;
+    height: 43vh;
+
+    background-image: url(img/definitionImg.png);
+    background-size: contain;
+    position: absolute;
+    background-repeat: no-repeat;
+
+    margin-left: 1%;
+    top: 10rem;
+}
+
+#describtion{
+    font-size: 1.3rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 2rem;
+
+    text-align: center;
+
+    margin-top: 2rem;
+}
+
+#bgBut{
+    width: 33vw;
+    height: 14vh;
+    /* margin-left: 25%; */
+
+    background-image: url(img/but_text.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    
+    bottom: 2rem;
+    right: -46.5rem;
+}
+
+#inline{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+#butPanda{
+    width: 35vw;
+    height: 35vh;
+    position: inherit;
+    background-image: url(img/butPanda.gif);
+    background-size: contain;
+    position: absolute;
+    background-repeat: no-repeat;
+
+    /* margin-left: 17%; */
+    top: -7rem;
+    left: -4rem;
+
+    z-index: 1;
+}
+
+#definit2{
+    display: inline-block;
+}
+
+#definit{
+    width: 44vw;
+    height: 17vh;
+
+    background-image: url(img/definition.png);
+    background-size: contain;
+    position: inherit;
+    background-repeat: no-repeat;
+
+    margin-left: 22%;
+}
+
+#vastA{
+    width: 83vw;
+    height: 14vh;
+
+    background-image: url(img/amount.png);
+    background-size: contain;
+    position: inherit;
+    background-repeat: no-repeat;
+
+    margin-left: 25%;
+}
+
+#oneMillion{
+    width: 32vw;
+    height: 32vh;
+
+    background-image: url(img/onemillion.gif);
+    background-size: contain;
+    position: inherit;
+    background-repeat: no-repeat;
+
+    margin-top: 3%;
+    margin-left: 30%;
+}
+
+#intImg{
+    width: 88vw;
+    height: 19vh;
+    background-image: url(img/intImgT.png);
+    background-size: contain;
+    position: inherit;
+    background-repeat: no-repeat;
+
+    margin-left: 24%;
+}
+
+
+#miniPanda{
+    width: 11vw;
+    height: 25vh;
+    background-image: url(img/miniPanda.gif);
+    background-size:cover;
+    background-repeat: no-repeat;
+    position:absolute;
+
+    left: 37%;
+    bottom: 68%;
+    /* z-index:  */
+    /* bottom:d
+    left: 0%; */
+
+    /* z-index: 1; */
+}
+
+
+
+
+
+#environImg{
+    width: 70vw;
+    height: 34vh;
+
+    background-position: 50%;
+
+    background-image: url(img/environImg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#environImg p{
+    /* margin-left: 31%; */
+}
+
+#bamboo{
+    width: 33vw;
+    height: 33vh;
+    background-image: url(img/bamboo.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    position: absolute;
+    z-index: -1;
+
+    left: 10rem;
+    top: -9rem;
+}
+
+#environPanda{
+    width: 35vw;
+    height: 35vh;
+    background-image: url(img/environPanda.gif);
+    background-size:contain;
+    background-repeat: no-repeat;
+    position:absolute;
+
+    left: 70%;
+    top: 4%;
+    /* z-index:  */
+    /* bottom:d
+    left: 0%; */
+
+    /* z-index: 1; */
+}
+
+/* .textBox{
+    font-size: 2rem;
+    width: 50rem;
+    color: #def200;
+} 사진 설명 들어가는 텍스트박스임 */
+
+/* .videoBox{
+    width: 100%;
+} */
+
+/* #myVideo{
+    width: 100%;
+    
+} */
+
+
+/*  */
+
+
+#mainImgBox{
+    width: 100%;
+}
+
+.row{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    /* background-color: aqua; */
+    justify-content: center;
+}
+
+.col1{
+    width: 18.23%; 
+    /* background-color: green; */
+}
+.col2{
+    width: 63.54%; 
+    /* background-color: navajowhite; */
+}
+.col3{
+    width: 18.23%; 
+    /* background-color: green; */
+}
+.col4{
+    width: 100%; 
+    /* background-color: green; */
+}
+
+
+
+
+/* .bgRow{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+} */
+
+
+/* #bgImg
+{
+    width: 100%;
+    height: 100%;
+    background-image: url(img/bg.png);
+    background-repeat:no-repeat;
+    background-position: top;
+    background-attachment:fixed;
+} */
+
+
+
+
+
+/* #bg{
+    position:sticky;
+} */
+
+ 
+
+
+
+/*  
+#headLine{
+    width: 100vw;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+*/
+
+
+/* 
+#left{
+    width: 100vw;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background-color: aqua;
+}
+*/
+
+
+/* 교수님이 만드신 '죽음'타이틀 가운데로 정렬하게 한 코드. 부모가 플렉스고 자식이 다이브가 앱솔루트면 고정값으로 지정해서 위치를 지정할 수 있다. */
+#left img{
+    margin-top: 16rem;
+    margin-left: 13rem;
+}
+
+#right img{
+    margin-top: 20rem;
+    margin-left: 13rem;
+
+}
+
+/* 
+#right{
+    width: 100vw;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background-color: aqua;
+}
+*/
+
+
+#deathT{
+    position: absolute;
+    top: 150px;
+    left: 50% - 300px;
+}
+
+#contentsF hr{
+    width: 35%;
+    height: 1%;
+    background-color: #4d4e4c;
+    border: none;
+
+    position: absolute;
+    top: 25rem;
+}
+
+
+#responsibility1{
+    width: 5vw;
+    height: 50vh;
+    position:absolute;
+    right: 98%;
+
+    background-image: url(img/responsibility1.png);
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+
+#responsibility2{
+    width: 5vw;
+    height: 50vh;
+    position:absolute;
+    right: 98%;
+
+    background-image: url(img/responsibility2.png);
+    background-position: left;
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+
+
+
+
+
+#yourThought{
+    text-align: center;
+    font-size: 4.5rem;
+    color: #4d4e4c;
+    font-family: 'ChosunBg';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 6rem;
+
+    margin-top: 20rem;
+}
+
+#footer{
+    margin-top: 62rem;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+
+#lastPanda{
+    width: 39vw;
+    height: 48vh;
+    margin-top: 6rem;
+    margin-left: 20%;
+    align-items: center;
+    /* position: absolute; */
+
+    background-image: url(img/lastpanda.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+
+}
+
+
+.moveTopBtn {
+    position: fixed;
+    bottom: 5rem;
+    right: 24.5rem;
+    width: 6rem;
+    height: 5.9rem;
+    background-image: url(img/upbutton.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* background: #000;
+    color: #fff; */
+    z-index: 1;
+}
+
+
+.moveTopBtn:hover{
+    background-image: url(img/upbuttonReversal.png);
+}
+
